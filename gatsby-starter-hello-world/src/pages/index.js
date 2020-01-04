@@ -1,8 +1,10 @@
 import React from "react"
+import Layout from "../components/Layout"
+import { Button } from "../components/Button"
 
 export default () => (
-  <div>
-    <h1>Welcome.</h1>
-    Hello world!
-</div>
+  <Layout>
+    <h1 className="title">Welcome.</h1>
+    <Button>Styled Button</Button>
+  </Layout>
 )

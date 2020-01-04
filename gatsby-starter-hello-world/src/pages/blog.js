@@ -1,8 +1,13 @@
 import React from "react"
+import Layout from "../components/Layout"
+import styles from '../components/blog.module.css'
 
 export default () => (
-  <div>
-    <h1>Blog Page.</h1>
-  </div>
+  <Layout>
+    <div className={styles.blog}>
+      <h1 className={styles.title}>Blog.</h1>
+      <h2>TEST HEADING.</h2>
+    </div>
+  </Layout>
 )
 
