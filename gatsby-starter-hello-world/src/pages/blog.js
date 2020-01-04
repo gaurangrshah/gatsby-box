@@ -2,7 +2,7 @@ import React from "react"
 
 export default () => (
   <div>
-    <h1>Welcome.</h1>
-    Hello world!
-</div>
+    <h1>Blog Page.</h1>
+  </div>
 )
+
