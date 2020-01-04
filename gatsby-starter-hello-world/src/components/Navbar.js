@@ -1,34 +1,37 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { toUpper } from "../utils";
+
 // import styles from "./navbar.module.scss"
 
+const getNavItems = graphql`
+{
+  site {
+    siteMetadata {
+      title
+      description
+      pages
+      adtlLinks {
+        id
+        title
+        url
+      }
+    }
+  }
+}
+`
+
 export default () => {
+  const { site: { siteMetadata: { title, description, pages, adtlLinks } } } = useStaticQuery(getNavItems)
+
   return (
     <nav>
-      <h2>Company Name</h2>
+      <h2>{title}</h2>
       <ul>
-        <li>
-          <Link to="/">home page</Link>
-        </li>
-        <li>
-          <Link to="/blog/">blog page</Link>
-        </li>
-        <li>
-          <Link to="/about/">about page</Link>
-        </li>
-        <li>
-          <Link to="/products/">products page</Link>
-        </li>
-        <li>
-          <Link to="/examples/">examples</Link>
-        </li>
-        <li>
-          <Link to="/404/">404 page</Link>
-        </li>
-        <li>
-          <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer">gatsby page</a>
-        </li>
+        {pages.length ? pages.map((page, i) => <li key={i}><Link to={`/${page}/`}>{toUpper(page)}</Link></li>) : ""}
+        {adtlLinks.length ? adtlLinks.map(url => <li key={url.id}><Link to={url.url} target="_blank" rel="noopener noreferrer">{toUpper(url.title)}</Link></li>) : ""}
       </ul>
+      <small>{description}</small>
     </nav>
   )
 }

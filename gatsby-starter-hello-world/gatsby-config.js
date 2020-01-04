@@ -9,7 +9,21 @@ module.exports = {
     title: "App Title",
     description: "App Description Area Here..",
     author: "@thisguy",
-    data: { name: "john", age: 26 }
+    data: { name: "john", age: 26 },
+    pages: ['home', 'blog', 'products', 'examples', '404', 'images'],
+    adtlLinks: [{ id: 1, title: 'gatsby docs', url: 'https://www.gatsbyjs.org' }]
   },
-  plugins: [`gatsby-plugin-sass`, `gatsby-plugin-styled-components`]
+  plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // name: `pages`,
+        // path: `${__dirname}/src/pages/`,
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+  ]
 }
