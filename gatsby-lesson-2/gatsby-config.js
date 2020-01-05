@@ -15,7 +15,7 @@ module.exports = {
     description: "App Description Area Here..",
     author: "@thisguy",
     data: { name: "john", age: 26 },
-    pages: ['home', 'blog', 'products', 'examples', '404', 'images'],
+    pages: ['home', 'blog', 'products', 'examples', '404', 'images', 'tours'],
     adtlLinks: [{ id: 1, title: 'gatsby docs', url: 'https://www.gatsbyjs.org' }]
   },
   plugins: [
