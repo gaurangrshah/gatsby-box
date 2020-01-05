@@ -1,0 +1,38 @@
+<!-- flex layout -->
+
+<div style="display: flex;">
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+</div>
+<pre>
+  <div style="display: flex;">
+    <div>1</div>
+    <div>1</div>
+    <div>1</div>
+  </div>
+</pre>
+<pre><code>
+  <div style="display: flex;">
+        <pre><code>
+        query SiteMetadata {
+          site {
+            siteMetadata {
+              author
+              title
+            }
+          }
+        }
+        </code></pre>
+<pre><code>
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "author": "@thisguy",
+        }
+      }
+    }
+  }
+</code></pre>
+</div>

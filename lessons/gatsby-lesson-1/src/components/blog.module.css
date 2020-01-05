@@ -1,0 +1,11 @@
+.title {
+  color: green;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.blog h2 {
+  color: salmon;
+  font-size: 1.2rem;
+  text-transform: lowercase;
+}
